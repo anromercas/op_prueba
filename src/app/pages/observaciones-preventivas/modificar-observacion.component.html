@@ -1,0 +1,80 @@
+<!-- 
+=====================================================================
+formulario Creación Observacion preventiva
+===================================================================== 
+-->
+<div class="text-left">
+    <button routerLink="/dashboard" type="button" class="btn btn-rounded btn-outline-primary">
+      <i class="fa fa-rotate-left"> Atrás</i>
+  </button>
+</div>
+<br>
+
+<div class="row animated zoomIn">
+    <div class="col-md-12">
+        <div class="card card-body bg-info text-white">
+
+            <h3 class="box-title m-b-0 card-title text-white">Modificcar Observacion Preventiva <small>Fecha: {{ fechaHoy |
+                  date:'dd/MM/yyyy' }} </small></h3>
+            <br>
+
+            <form [formGroup]="forma" ngNativeValidate (ngSubmit)="guardarObservacion( observacion )">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="usuario">Usuario</label>
+                        <select (change)="cambioUsuario( $event.target.value )" formControlName="usuario" name="estado" class="form-control">
+                          <option value="">Seleccione Usuario</option>
+                          <option *ngFor="let usuario of usuarios" [value]="usuario._id"> {{ usuario.nombre + ' ' +
+                              usuario.apellido + ' ' + usuario.segundoapellido }} </option>
+                      </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="formulario">Formulario</label>
+                        <select formControlName="formulario" name="estado" class="form-control">
+                          <option value="">-- selecciona una opción --</option>
+                          <option value="HORNO">HORNO</option>
+                          <option value="BARRIDO">BARRIDO</option>
+                          <option value="CALDERAS">CALDERAS</option>
+                          <option value="RECAUCHUTADO">RECAUCHUTADO</option>
+                      </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="zona">Tipo</label>
+                        <select formControlName="zona" name="zona" class="form-control">
+                          <option value="">-- selecciona una opción --</option>
+                          <option value="PARADA">PARADA</option>
+                          <option value="INSPECCION GENERAL">INSPECCION GENERAL</option>
+                          <option value="INSPECCION CORREA">INSPECCION CORREA</option>
+                      </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="fecha">fecha</label>
+                        <div class="input-group date">
+
+                            <input formControlName="fecha" type="date" name="fecha" class="form-control" [value]="fechaHoy | date:'dd/MM/yyyy'">
+
+                            <!-- <span class="input-group-addon"><i class="icon-calender"></i></span> -->
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="estado">Repetición</label>
+                        <select formControlName="repeticion" name="repeticion" class="form-control">
+                          <option value="">-- selecciona una opción --</option>
+                          <option value="DIARIO">DIARIO</option>
+                          <option value="SEMANAL">SEMANAL</option>
+                          <option value="MENSUAL">MENSUAL</option>
+                          <option value="ANUAL">ANUAL</option>
+                      </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for=""></label> <br>
+                        <button type="submit" class="btn btn-primary">
+                          <i class="fa fa-save"> Guardar</i>
+                      </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

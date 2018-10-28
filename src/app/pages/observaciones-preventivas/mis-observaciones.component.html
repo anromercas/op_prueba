@@ -1,0 +1,58 @@
+<div class="row animated bounceInRight" *ngIf="cargando">
+  <div class="col-sm-12">
+    <div class="alert alert-warning text-center">
+      <strong>Cargando</strong>
+      <br>
+      <i class="fa fa-refresh fa-spin fa-2x"></i>
+      <br>
+      <span>Espere por favor</span>
+    </div>
+  </div>
+</div>
+
+<div class="row animated fadeIn" *ngIf="!cargando">
+  <div class="col-xl-auto col-lg-auto col-md-12 col-sm-12">
+    <div class="card">
+      <div class="card-body">
+
+        <h3 class="cardtitle">Total tareas( <small> {{ totalRegistros }} </small> )  de {{ usuario.nombre + ' ' + usuario.apellido + ' ' +
+          usuario.segundoapellido }}</h3>
+
+        <table class="table table-hover table-striped table-responsive table-responsive-lg">
+          <thead>
+            <tr>
+              <th>Usuario Asigando</th>
+              <th>Formulario</th>
+              <th>Zona</th>
+              <th>Fecha</th>
+              <th>Repetición</th>
+              <th>Operaciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let observacion of observaciones">
+              <td> {{ observacion.usuario.nombre + ' ' + observacion.usuario.apellido + ' ' +
+                observacion.usuario.segundoapellido }} </td>
+              <td> {{ observacion.formulario }} </td>
+              <td> {{ observacion.zona }} </td>
+              <td> {{ observacion.fecha | date:'dd/MM/yyyy' }} </td>
+              <td> {{ observacion.repeticion }} </td>
+              <td>
+                <button (click)="borrarObservacion( observacion )" type="submit" class="btn btn-danger" style="margin: 10px">
+                  <i class="fa fa-trash"></i>
+                </button>
+
+                <button (click)="validarObservacion( observacion )" type="submit" class="btn btn-success">
+                  <i class="fa fa-check"></i>
+                </button>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button (click)="cambiarDesde(-5)" class="btn btn-secondary">Anteriores</button>
+        <button (click)="cambiarDesde(5)" class="btn btn-secondary">Siguientes</button>
+      </div>
+    </div>
+  </div>
+</div>

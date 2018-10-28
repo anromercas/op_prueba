@@ -1,0 +1,6 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="onChoseLocation($event)">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  <agm-marker [latitude]="data.marcador1.lat" [longitude]="data.marcador1.lng"></agm-marker>
+  <agm-marker [latitude]="data.marcador2.lat" [longitude]="data.marcador2.lng"></agm-marker>
+  <agm-marker [latitude]="data.marcador3.lat" [longitude]="data.marcador3.lng"></agm-marker>
+</agm-map>

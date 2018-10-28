@@ -1,0 +1,214 @@
+<form>
+    <div class="row">
+        <div class="col-md-12 ">
+
+            <div class="row">
+                <div class="col-md-4">
+                    <button type="submit" routerLink="/" class="btn btn-outline-danger btn-block">
+                        <i class="fa fa-rotate-left"> Salir</i>
+                    </button>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fa fa-save"> Guardar</i>
+                    </button>
+                </div>
+
+            </div>
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-body">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" placeholder="Nombre">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="fecha">fecha</label>
+                        <div class="input-group date">
+                            <input type="date" name="fecha" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="observador">observador</label>
+                        <input type="text" name="observador" class="form-control" placeholder="observador">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label for="puesto">Puesto</label>
+                        <input type="text" name="puesto" class="form-control" placeholder="Puesto">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="Zona">Zona</label>
+                        <input type="text" name="Zona" class="form-control" placeholder="Zona">
+                    </div>
+                    <div class="col-md-4">
+                        <label for=""></label> <br>
+                        <button type="submit" class="btn btn-primary btn-rounded btn-block">
+                  <i class="fa fa-camera"> Tomar foto</i>
+              </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-body">
+                <h3 class="box-title m-b-0">1) Posición del trabajador</h3>
+                <p class="text-muted m-b-30 font-13"></p>
+
+
+                <div class="row">
+                    <div class="col-sm-3">
+                        <label class="btn">
+                          <img [ngClass]="{'check':seleccionado[0]}" (click)="seleccionado[0]=!seleccionado[0]" src="../../../assets/images/icon/golpeado.png"
+                            alt="golpeado" class="w100 h100 m5">
+                          <input type="checkbox" name="golpeado" id="golpeado" value="golpeado" class="hidden" autocomplete="off">
+                        </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="btn">
+                          <img [ngClass]="{'check':seleccionado[1]}" (click)="seleccionado[1]=!seleccionado[1]" src="../../../assets/images/icon/inhalacion.png"
+                            alt="golpeado" class="w120 h100 m5">
+                          <input type="checkbox" name="golpeado" id="golpeado" value="golpeado" class="hidden" autocomplete="off">
+                        </label>
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label class="btn">
+                          <img [ngClass]="{'check':seleccionado[2]}" (click)="seleccionado[2]=!seleccionado[2]" src="../../../assets/images/icon/atrapado.png"
+                            alt="golpeado" class="w100 h100 m5">
+                          <input type="checkbox" name="golpeado" id="golpeado" value="golpeado" class="hidden" autocomplete="off">
+                        </label>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label class="btn">
+                          <img [ngClass]="{'check':seleccionado[3]}" (click)="seleccionado[3]=!seleccionado[3]" src="../../../assets/images/icon/caidas.png"
+                            alt="golpeado" class="w100 h100 m5">
+                          <input type="checkbox" name="golpeado" id="golpeado" value="golpeado" class="hidden" autocomplete="off">
+                        </label>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label class="btn">
+                          <img [ngClass]="{'check':seleccionado[4]}" (click)="seleccionado[4]=!seleccionado[4]" src="../../../assets/images/icon/temp-extremas.png"
+                            alt="golpeado" class="w120 h100 m5">
+                          <input type="checkbox" name="golpeado" id="golpeado" value="golpeado" class="hidden" autocomplete="off">
+                        </label>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label class="btn">
+                          <img [ngClass]="{'check':seleccionado[5]}" (click)="seleccionado[5]=!seleccionado[5]" src="../../../assets/images/icon/corriente electrica.png"
+                            alt="golpeado" class="w100 h100 m5">
+                          <input type="checkbox" name="golpeado" id="golpeado" value="golpeado" class="hidden" autocomplete="off">
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-body">
+                <h3 class="box-title m-b-0">2) Equipos Protección Individual</h3>
+                <img src="../../../assets/images/icon/avatar-app-michelin.png" alt="avatar" class="img-avatar">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class=" card card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Actos Inseguros</th>
+                                <th>Descripcion de la situacion detectada</th>
+                                <th>consecuencia</th>
+                                <th class="text-nowrap">Alcance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>¿Conoce las 7 Reglas Cardinales de Seguridad? ¿Cuales son? ¿Sabrías localizarlas en tu ordenador?</td>
+                                <td>
+                                    <input type="text" name="descripcion-reglas-cardinales" placeholder="Descripcion de la situacion detectada">
+                                </td>
+                                <td>
+                                    <input type="text" name="consecuencia-reglas-cardinales" placeholder="Consecuencia">
+
+                                </td>
+                                <td class="text-nowrap">
+                                    <input type="text" name="alcance-reglas-cardinales" placeholder="Alcance">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Realización de tareas a ritmo inadeacuado (correr)</td>
+                                <td>
+                                    <input type="text" name="descripcion-correr" placeholder="Descripcion de la situacion detectada">
+                                </td>
+                                <td>
+                                    <input type="text" name="consecuencia-correr" placeholder="Consecuencia">
+
+                                </td>
+                                <td class="text-nowrap">
+                                    <input type="text" name="alcance-correr" placeholder="Alcance">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Levantar cargas manualmente de forma incorrecta</td>
+                                <td>
+                                    <input type="text" name="descripcion-levantar-cargas" placeholder="Descripcion de la situacion detectada">
+                                </td>
+                                <td>
+                                    <input type="text" name="consecuencia-levantar-cargas" placeholder="Consecuencia">
+
+                                </td>
+                                <td class="text-nowrap">
+                                    <input type="text" name="alcance-levantar-cargas" placeholder="Alcance">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Adoptar una posición incorrecta en el puesto</td>
+                                <td>
+                                    <input type="text" name="descripcion-posicion-incorreta" placeholder="Descripcion de la situacion detectada">
+                                </td>
+                                <td>
+                                    <input type="text" name="consecuencia-posicion-incorreta" placeholder="Consecuencia">
+
+                                </td>
+                                <td class="text-nowrap">
+                                    <input type="text" name="alcance-posicion-incorreta" placeholder="Alcance">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Falta de coordinación en operaciones conjuntas</td>
+                                <td>
+                                    <input type="text" name="descripcion-coordinacion" placeholder="Descripcion de la situacion detectada">
+                                </td>
+                                <td>
+                                    <input type="text" name="consecuencia-coordinacion" placeholder="Consecuencia">
+
+                                </td>
+                                <td class="text-nowrap">
+                                    <input type="text" name="alcance-coordinacion" placeholder="Alcance">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
